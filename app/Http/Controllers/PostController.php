@@ -41,6 +41,7 @@ class PostController extends Controller
 
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -62,7 +63,7 @@ class PostController extends Controller
     {
         $this->authorize('create', \App\Post::class);
 
-        $post = $this->service->make($request->validated());
+        $post = $this->service->make($request->validated(),\Auth::user());
 
         return redirect(route('post.show', $post->id));
     }

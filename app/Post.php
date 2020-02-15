@@ -4,12 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class Post extends Model
 {
 
     use Searchable;
     protected $fillable = ['title', 'content', 'is_published', 'author_id'];
+
+    protected $casts = [
+        'is_published' => 'boolean'
+    ];
 
     public function author()
     {
@@ -43,4 +48,5 @@ class Post extends Model
     //     // return $query->where('title', 'like', '%' . $keyword . '%')
     //     //     ->orwhere('content', 'like', '%' . $keyword . '%');
     // }
+
 }

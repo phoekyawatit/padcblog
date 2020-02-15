@@ -15,13 +15,12 @@ Route::get('/', function () {
     return redirect('/post');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', function () {
     return redirect('/post');
 });
 
-
 Route::resource('post', 'PostController');
+
+
