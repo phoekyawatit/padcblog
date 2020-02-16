@@ -37428,7 +37428,7 @@ var render = function() {
   return _c("form-group", { attrs: { label: "Caregory : " } }, [
     _c(
       "select",
-      { attrs: { name: "category" } },
+      { attrs: { name: "category_id" } },
       _vm._l(_vm.categories, function(category) {
         return _c(
           "option",

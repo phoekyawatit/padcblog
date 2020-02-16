@@ -1,6 +1,6 @@
 <template>
   <form-group label="Caregory : ">
-    <select name="category">
+    <select name="category_id">
       <option v-for="category in categories" :key="category.id" :value="category.id">{{category.name}}</option>
     </select>
   </form-group>
