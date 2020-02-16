@@ -1916,6 +1916,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['token'],
   data: function data() {
     return {
       categories: []
@@ -1924,7 +1925,9 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get("/api/v1/category").then(function (response) {
+    var token = this.token;
+    var url = "/api/web/v1/category";
+    axios.get(url).then(function (response) {
       _this.categories = response.data;
     });
   }

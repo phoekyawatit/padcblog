@@ -7,13 +7,16 @@
 </template>
 <script>
 export default {
+  props : ['token'],
   data() {
     return {
       categories: []
     };
   },
   created() {
-    axios.get("/api/v1/category").then(response => {
+    const token = this.token;
+    const url = `/api/web/v1/category`
+    axios.get(url).then(response => {
       this.categories = response.data;
     });
   }

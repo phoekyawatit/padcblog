@@ -24,3 +24,9 @@ Route::get('/home', function () {
 Route::resource('post', 'PostController');
 
 
+Route::prefix('api/web/v1/')->middleware('auth')->namespace('Api\v1')->group(function () {
+
+    // Route::apiResource('post', 'PostController');
+
+    Route::apiResource('category', 'CategoryController');
+});
