@@ -15,7 +15,6 @@ class CategoryController extends Controller
      */
     public function index(Request $request)
     {
-        // return \Auth::user();
         return Category::all();
     }
 

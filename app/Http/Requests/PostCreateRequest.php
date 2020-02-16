@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostSaveRequest extends FormRequest
+class PostCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,10 @@ class PostSaveRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'sometimes|required|string|max:255',
-            'content' => 'sometimes|required|string',
-            'is_published' => 'boolean',
-            'category_id' => 'sometimes|required|exists:categories,id'
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'is_published' => 'required|boolean',
+            'category_id' => 'required|exists:categories,id'
         ];
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PostSaveRequest;
+use App\Http\Requests\PostCreateRequest;
 use App\Repositories\PostRepository;
 use App\Services\PostService;
 use App\Traits\Notify;
@@ -59,7 +60,7 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PostSaveRequest $request)
+    public function store(PostCreateRequest $request)
     {
         $this->authorize('create', \App\Post::class);
 

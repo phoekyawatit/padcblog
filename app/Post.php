@@ -10,7 +10,7 @@ class Post extends Model
 {
 
     use Searchable;
-    protected $fillable = ['title', 'content', 'is_published', 'author_id'];
+    protected $fillable = ['title', 'content', 'is_published', 'author_id','category_id'];
 
     protected $casts = [
         'is_published' => 'boolean'
@@ -19,6 +19,10 @@ class Post extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 
     public function getExcerptAttribute()
