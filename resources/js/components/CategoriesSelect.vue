@@ -1,13 +1,18 @@
 <template>
   <form-group label="Caregory : ">
-    <select name="category_id">
-      <option v-for="category in categories" :key="category.id" :value="category.id">{{category.name}}</option>
+    <select name="category_id" class="form-control">
+      <option v-for="category in categories" :key="category.id" :selected="category_id == category.id ? true : false" :value="category.id">{{category.name}}</option>
     </select>
   </form-group>
 </template>
 <script>
 export default {
-  props : ['token'],
+  props : [
+    
+    'token',
+    'category_id'
+    
+    ],
   data() {
     return {
       categories: []

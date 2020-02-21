@@ -18,7 +18,9 @@ class PostResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'title' => $this->title,
+            'excerpt' => $this->excerpt,
             'content' => \nl2br($this->content),
             'author_name' => $this->author->name,
             'is_published' => $this->is_published
